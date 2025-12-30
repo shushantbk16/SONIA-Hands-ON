@@ -13,7 +13,7 @@ Real-time microphone transcription using Deepgram and Python.
    ```bash
    git clone https://github.com/shushantbk16/SONIA-Hands-ON.git
    cd SONIA-Hands-ON
-   ```
+   ``` 
 
 2. Create and activate a virtual environment:
    ```bash
