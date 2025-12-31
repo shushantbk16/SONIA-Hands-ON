@@ -2,3 +2,6 @@ deepgram-sdk
 sounddevice
 numpy
 python-dotenv
+fastapi
+uvicorn
+websockets

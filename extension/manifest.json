@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Deepgram Tab Capture",
+    "version": "1.0",
+    "description": "Captures tab audio and streams to local Deepgram server",
+    "permissions": [
+        "tabCapture",
+        "offscreen",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
