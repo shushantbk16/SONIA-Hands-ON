@@ -1,6 +1,14 @@
 # SONIA-Hands-ON
 
+
 Real-time microphone transcription using Deepgram and Python.
+
+## Features
+
+- Real-time audio transcription
+- Low latency streaming
+- Easy-to-use command line interface
+
 
 ## Prerequisites
 
