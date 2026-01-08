@@ -1,0 +1,143 @@
+body {
+    width: 320px;
+    padding: 16px;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #ffffff;
+    color: #202124;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 16px 0;
+    color: #202124;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section {
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5f6368;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #1a73e8;
+    border: 1px solid #dadce0;
+}
+
+.btn-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #d2e3fc;
+    color: #174ea6;
+}
+
+.btn-danger {
+    background-color: #d93025;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #a50e0e;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+button:disabled {
+    background-color: #f1f3f4;
+    color: #bdc1c6;
+    cursor: not-allowed;
+    border: none;
+    box-shadow: none;
+}
+
+input[type="file"] {
+    width: 100%;
+    font-size: 12px;
+    color: #5f6368;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    background: #e8f0fe;
+    color: #1967d2;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+#status {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #5f6368;
+    text-align: center;
+    min-height: 16px;
+}
+
+#questions-container {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+    white-space: pre-wrap;
+}
+
+.divider {
+    height: 1px;
+    background-color: #dadce0;
+    margin: 16px 0;
+    border: none;
+}
+
+/* Icons (using simple CSS shapes or unicode for now to avoid external assets) */
+.icon-mic::before { content: "🎙️"; margin-right: 6px; }
+.icon-upload::before { content: "📄"; margin-right: 6px; }

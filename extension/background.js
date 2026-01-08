@@ -1,8 +1,7 @@
-let creating; // A global promise to avoid concurrency issues
+let creating;
 
 async function setupOffscreenDocument(path) {
-    // Check all windows controlled by the service worker to see if one 
-    // of them is the offscreen document with the given path
+
     const offscreenUrl = chrome.runtime.getURL(path);
     const existingContexts = await chrome.runtime.getContexts({
         contextTypes: ['OFFSCREEN_DOCUMENT'],
@@ -13,7 +12,7 @@ async function setupOffscreenDocument(path) {
         return;
     }
 
-    // create offscreen document
+
     if (creating) {
         await creating;
     } else {
@@ -30,7 +29,7 @@ async function setupOffscreenDocument(path) {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'START_RECORDING') {
         startRecording(sendResponse);
-        return true; // Keep the message channel open for async response
+        return true;
     } else if (message.type === 'STOP_RECORDING') {
         stopRecording(sendResponse);
         return true;
@@ -41,12 +40,12 @@ async function startRecording(sendResponse) {
     try {
         await setupOffscreenDocument('offscreen.html');
 
-        // Get the stream ID from the active tab
+
         const streamId = await chrome.tabCapture.getMediaStreamId({
-            targetTabId: null // current active tab
+            targetTabId: null
         });
 
-        // Send stream ID to offscreen document
+
         chrome.runtime.sendMessage({
             type: 'START_FROM_BACKGROUND',
             streamId: streamId
@@ -61,7 +60,12 @@ async function startRecording(sendResponse) {
 
 async function stopRecording(sendResponse) {
     chrome.runtime.sendMessage({ type: 'STOP_FROM_BACKGROUND' });
-    // Close offscreen document
+
     await chrome.offscreen.closeDocument();
     sendResponse({ success: true });
 }
+
+
+chrome.action.onClicked.addListener((tab) => {
+    chrome.sidePanel.open({ windowId: tab.windowId });
+});

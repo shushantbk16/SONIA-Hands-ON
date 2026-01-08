@@ -6,7 +6,8 @@
     "permissions": [
         "tabCapture",
         "offscreen",
-        "activeTab"
+        "activeTab",
+        "sidePanel"
     ],
     "host_permissions": [
         "<all_urls>"
@@ -15,6 +16,9 @@
         "service_worker": "background.js"
     },
     "action": {
-        "default_popup": "popup.html"
+        "default_title": "Open HR Assistant"
+    },
+    "side_panel": {
+        "default_path": "popup.html"
     }
 }

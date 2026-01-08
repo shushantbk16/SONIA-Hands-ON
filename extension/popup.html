@@ -2,33 +2,26 @@
 <html>
 
 <head>
-    <style>
-        body {
-            width: 200px;
-            padding: 10px;
-            font-family: sans-serif;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            cursor: pointer;
-        }
-
-        #status {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
-    <h3>Tab Transcription</h3>
-    <button id="startBtn">Start Capture</button>
-    <button id="stopBtn" disabled>Stop Capture</button>
+    <h3>HR Assistant</h3>
+
+    <div class="section">
+        <div class="section-title">Transcription</div>
+        <button id="startBtn" class="btn-primary"><span class="icon-mic"></span>Start Capture</button>
+        <button id="stopBtn" class="btn-danger" style="margin-top: 8px;" disabled>Stop Capture</button>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section">
+        <div class="section-title">Resume Analysis</div>
+        <input type="file" id="resumeInput" accept=".pdf,.txt,.docx">
+        <button id="uploadBtn" class="btn-secondary"><span class="icon-upload"></span>Upload & Analyze</button>
+    </div>
+
     <div id="status">Ready</div>
     <script src="popup.js"></script>
 </body>
